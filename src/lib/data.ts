@@ -36,7 +36,7 @@ export const personal = {
   phone: "+91 6380701533",
   github: "https://github.com/kuralnithi",
   linkedin: "https://www.linkedin.com/in/kural-nithi-0b967122b",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "https://drive.google.com/file/d/18_42Jg0gQ33ZTedXuMI0yCTqRGgkpa9_/view?usp=sharing",
   location: "India",
 } as const;
 
@@ -44,7 +44,7 @@ export const personal = {
 
 export const about = {
   summary:
-    "I'm a GenAI Developer with nearly 2 years of professional experience building production-grade web applications and AI-powered systems. I specialize in designing multi-agent architectures using LangGraph, building RAG pipelines with vector databases, and developing full-stack applications with React, Next.js, FastAPI, and Node.js. My work bridges the gap between cutting-edge AI research and real-world software engineering — turning complex LLM capabilities into elegant, user-facing products.",
+    "I'm a GenAI Developer specializing in building production-grade web applications and AI-powered systems. I specialize in designing multi-agent architectures using LangGraph, building RAG pipelines with vector databases, and developing full-stack applications with React, Next.js, FastAPI, and Node.js. My work bridges the gap between cutting-edge AI research and real-world software engineering — turning complex LLM capabilities into elegant, user-facing products. I bring nearly 2 years of professional Software Development Engineer (SDE) experience building production-grade applications.",
   stats: [
     { label: "Years Experience", value: 2, suffix: "+" },
     { label: "Projects Shipped", value: 5, suffix: "+" },
@@ -151,6 +151,8 @@ export interface Project {
   techStack: string[];
   liveUrl?: string;
   githubUrl?: string;
+  githubBackendUrl?: string;
+  linkedinPostUrl?: string;
   isAI: boolean;
   featured: boolean;
   image: string;
@@ -173,6 +175,9 @@ export const projects: Project[] = [
       "Qdrant",
     ],
     liveUrl: "https://fin-bot-kuralnithi.netlify.app/",
+    githubUrl: "https://github.com/kuralnithi/CB_A1_FINBOT_FRONTEND",
+    githubBackendUrl: "https://github.com/kuralnithi/CB_A1_FINBOT_BACKEND",
+    linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7444815302963585024/",
     isAI: true,
     featured: true,
     image: "/projects/finbot.png",
@@ -192,6 +197,8 @@ export const projects: Project[] = [
       "Qdrant",
     ],
     liveUrl: "https://ai-hrms.netlify.app/login",
+    githubUrl: "https://github.com/kuralnithi/CB_A2_HRMS_FRNTD",
+    githubBackendUrl: "https://github.com/kuralnithi/CB_A2_HRMS",
     isAI: true,
     featured: true,
     image: "/projects/novaworks.png",

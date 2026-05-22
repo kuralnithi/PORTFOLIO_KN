@@ -7,7 +7,6 @@ import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { GenAIFocus } from "@/components/sections/GenAIFocus";
 import { Contact } from "@/components/sections/Contact";
-import { FloatingResume } from "@/components/shared/FloatingResume";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <FloatingResume />
     </>
   );
 }

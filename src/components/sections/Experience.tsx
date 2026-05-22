@@ -36,10 +36,32 @@ export function Experience() {
               style={{ marginBottom: '32px' }}
             >
               {/* Timeline line */}
-              <div className="absolute top-0 left-6 h-full w-px bg-gradient-to-b from-[#3B82F6] via-[#8B5CF6] to-transparent opacity-30" />
+              <div className="absolute top-0 left-6 h-full w-px pointer-events-none" style={{ zIndex: 0 }}>
+                <svg className="h-full w-full opacity-40" preserveAspectRatio="none" style={{ height: '100%', width: '1px' }}>
+                  <line x1="0" y1="0" x2="0" y2="100%" stroke="url(#timeline-grad)" strokeWidth="1.5" />
+                  <motion.line
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="100%"
+                    stroke="#22D3EE"
+                    strokeWidth="2"
+                    strokeDasharray="12 120"
+                    animate={{ strokeDashoffset: [0, -250] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                  />
+                  <defs>
+                    <linearGradient id="timeline-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="70%" stopColor="#8B5CF6" />
+                      <stop offset="100%" stopColor="transparent" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
 
               {/* Timeline dot */}
-              <div className="absolute top-6 left-[14px] h-5 w-5 rounded-full border-2 border-[#3B82F6] bg-[#060816]">
+              <div className="absolute top-6 left-[14px] h-5 w-5 rounded-full border-2 border-[#3B82F6] bg-[#060816]" style={{ zIndex: 5 }}>
                 <div className="absolute inset-1 rounded-full bg-[#3B82F6]" />
               </div>
 

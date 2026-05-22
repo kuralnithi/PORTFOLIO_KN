@@ -14,6 +14,50 @@ export function GenAIFocus() {
       <div className="gradient-blob absolute -top-20 right-1/4 h-[400px] w-[400px] bg-[#22D3EE]" style={{ opacity: 0.08 }} />
       <div className="gradient-blob absolute -bottom-20 left-1/4 h-[300px] w-[300px] bg-[#8B5CF6]" style={{ opacity: 0.08, animationDelay: "3s" }} />
 
+      {/* 3D Holographic Vector Orbit Ring Background */}
+      <div className="absolute right-[8%] top-[25%] pointer-events-none hidden lg:block opacity-30" style={{ zIndex: 1, width: '220px', height: '220px' }}>
+        <svg className="w-full h-full animate-pulse-slow" viewBox="0 0 200 200">
+          {/* Ring 1 */}
+          <motion.ellipse
+            cx="100" cy="100" rx="85" ry="22"
+            fill="none"
+            stroke="rgba(34, 211, 238, 0.35)"
+            strokeWidth="1.2"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: 'center' }}
+          />
+          {/* Ring 2 */}
+          <motion.ellipse
+            cx="100" cy="100" rx="85" ry="22"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.35)"
+            strokeWidth="1.5"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: 'center', rotate: '60deg' }}
+          />
+          {/* Ring 3 */}
+          <motion.ellipse
+            cx="100" cy="100" rx="85" ry="22"
+            fill="none"
+            stroke="rgba(59, 130, 246, 0.35)"
+            strokeWidth="1.2"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: 'center', rotate: '-60deg' }}
+          />
+          {/* Central glowing core node */}
+          <motion.circle
+            cx="100" cy="100" r="5"
+            fill="#22D3EE"
+            animate={{ scale: [1, 1.25, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            style={{ filter: "drop-shadow(0 0 10px #22D3EE)" }}
+          />
+        </svg>
+      </div>
+
       <div className="relative z-10 section-container">
         <SectionHeading label="AI Focus" title="GenAI Expertise" subtitle="Deep specialization in building production-grade AI systems." />
 

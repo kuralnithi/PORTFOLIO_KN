@@ -30,6 +30,31 @@ export function Contact() {
   return (
     <section id="contact" className="relative" style={{ paddingTop: '8rem', paddingBottom: '10rem' }}>
       <div className="absolute inset-0 bg-gradient-to-b from-[#060816] to-[#0B1020]" />
+      
+      {/* Dynamic contact synapse background arcs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block" style={{ zIndex: 1 }}>
+        <svg className="w-full h-full opacity-25" viewBox="0 0 1000 800">
+          <motion.path
+            d="M 100 200 C 300 400, 700 100, 900 600"
+            fill="none"
+            stroke="rgba(34, 211, 238, 0.25)"
+            strokeWidth="1.5"
+            strokeDasharray="6 40"
+            animate={{ strokeDashoffset: [0, -180] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.path
+            d="M 50 650 C 400 350, 600 750, 950 200"
+            fill="none"
+            stroke="rgba(139, 92, 246, 0.25)"
+            strokeWidth="1.5"
+            strokeDasharray="6 40"
+            animate={{ strokeDashoffset: [0, 180] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          />
+        </svg>
+      </div>
+
       <div className="relative z-10 section-container">
         <SectionHeading label="Contact" title="Let's Connect" subtitle="Interested in working together? I'd love to hear from you." />
 

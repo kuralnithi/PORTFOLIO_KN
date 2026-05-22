@@ -10,12 +10,22 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isShocked, setIsShocked] = useState(false);
   const activeSection = useActiveSection(navLinks.map((l) => l.href.replace("#", "")));
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleShock = () => {
+      setIsShocked(true);
+      setTimeout(() => setIsShocked(false), 350);
+    };
+    window.addEventListener("navbar-bubble-shock", handleShock);
+    return () => window.removeEventListener("navbar-bubble-shock", handleShock);
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -26,8 +36,34 @@ export function Navbar() {
 
   return (
     <>
-      <motion.nav initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-500", isScrolled ? "glass-strong shadow-lg shadow-black/10" : "bg-transparent")}>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={isShocked ? {
+          x: [0, -1, 1, -0.5, 0.5, 0],
+          y: [0, 0.5, -0.5, 0.5, 0],
+          backgroundColor: "rgba(6, 8, 22, 0.96)",
+        } : {
+          y: 0,
+          opacity: 1,
+        }}
+        transition={isShocked ? {
+          duration: 0.35,
+          ease: "easeInOut",
+        } : {
+          duration: 0.6,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        style={{
+          borderBottom: isShocked 
+            ? "1px solid rgba(34, 211, 238, 0.35)" 
+            : isScrolled 
+              ? "1px solid rgba(255, 255, 255, 0.08)" 
+              : "1px solid transparent",
+          boxShadow: isShocked 
+            ? "0 4px 20px rgba(34, 211, 238, 0.12)" 
+            : "none",
+        }}
+        className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-500", isScrolled && !isShocked ? "glass-strong shadow-lg shadow-black/10" : "bg-transparent")}>
         <div className="section-container" style={{ display: 'flex', height: '64px', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px' }}>
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="group rounded-lg" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: '0' }}>
             <div style={{ display: 'flex', width: '32px', height: '32px', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', background: 'linear-gradient(to bottom right, #3B82F6, #8B5CF6)' }}>
