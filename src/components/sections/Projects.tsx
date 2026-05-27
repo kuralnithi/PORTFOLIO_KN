@@ -1122,7 +1122,7 @@ export function Projects() {
                     </motion.div>
                   </motion.div>
 
-                  {/* 2. Text message "Click here to view" rendered BELOW the card UI */}
+                  {/* 2. Text message "Click to view" rendered BELOW the card UI */}
                   <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -1135,7 +1135,7 @@ export function Projects() {
                   >
                     <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d1328]/95 backdrop-blur-md text-[11px] font-bold text-[#22D3EE] border border-[#22D3EE]/30 shadow-[0_0_25px_rgba(34,211,238,0.2)] tracking-widest font-mono uppercase animate-pulse">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE] animate-ping" />
-                      click here to view
+                      click to view
                     </div>
                   </motion.div>
                 </>
