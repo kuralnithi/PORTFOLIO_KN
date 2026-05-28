@@ -199,6 +199,7 @@ export const projects: Project[] = [
     liveUrl: "https://cb-a2-hrms-frntd.vercel.app/login",
     githubUrl: "https://github.com/kuralnithi/CB_A2_HRMS_FRNTD",
     githubBackendUrl: "https://github.com/kuralnithi/CB_A2_HRMS",
+    linkedinPostUrl: "https://www.linkedin.com/posts/kural-nithi-0b967122b_ai-generativeai-langchain-ugcPost-7465425438513938432-WNot/",
     isAI: true,
     featured: true,
     image: "/projects/novaworks.png",
