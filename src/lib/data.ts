@@ -36,7 +36,7 @@ export const personal = {
   phone: "+91 6380701533",
   github: "https://github.com/kuralnithi",
   linkedin: "https://www.linkedin.com/in/kural-nithi-0b967122b",
-  resumeUrl: "https://drive.google.com/file/d/1h6I_hoIJ_5OOgXc11r083fxie6s36EfU/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/11PpDBJejXyAj7NnKcgaYfv3_RaQRBuGh/view?usp=sharing",
   location: "India",
 } as const;
 
