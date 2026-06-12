@@ -942,13 +942,13 @@ export function Projects() {
           subtitle="Production-grade applications powered by AI and modern engineering."
         />
 
-        {/* GenAI Projects Category Heading */}
+        {/* AI Projects Category Heading */}
         <div className="flex items-center" style={{ gap: '12px', marginBottom: '24px', marginTop: '16px' }}>
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(34,211,238,0.1)] text-[#22D3EE]">
             <Sparkles size={18} />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-[#F1F5F9] tracking-tight">GenAI Projects</h3>
+            <h3 className="text-xl font-bold text-[#F1F5F9] tracking-tight">AI Projects</h3>
             <p className="text-sm text-[#94A3B8]">Multi-agent systems, Policy RAGs, and intelligent orchestrators</p>
             {/* Glowing synapse scanner pipeline */}
             <div className="relative h-[2px] w-48 rounded-full bg-gradient-to-r from-[rgba(34,211,238,0.2)] via-[rgba(139,92,246,0.2)] to-transparent overflow-hidden" style={{ marginTop: '6px' }}>
